@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blindRange: MyString
+  pokerSituation: MyString
+  opponentType: MyString
+
+two:
+  blindRange: MyString
+  pokerSituation: MyString
+  opponentType: MyString
