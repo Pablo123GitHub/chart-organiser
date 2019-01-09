@@ -14,7 +14,7 @@ class ChartsController < ApplicationController
 
     private 
     def comment_params
-        params.require(:chart).permit(:blindrange, :situation, :opponent )
+        params.require(:chart).permit(:blindrange, :situation, :opponent, :image )
     end 
 
 
