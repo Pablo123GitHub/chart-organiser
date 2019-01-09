@@ -1,0 +1,24 @@
+<%= form_with(model: [ @category, @category.charts.build ],
+local: true) do |form| %>
+<p>
+    <%= form.label :blindrange %>
+    <%= form.text_field :blindrange %>
+</p>
+
+<p>
+    <%= form.label :situation %>
+    <%= form.text_field :situation %>
+</p>
+
+<p>
+    <%= form.label :opponent %>
+    <%= form.text_field :opponent %>
+</p>
+
+<p> 
+    <%= form.submit %>
+</p>
+<% end %>
+
+
+
