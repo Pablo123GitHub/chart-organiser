@@ -10,5 +10,49 @@
   <%= @category.description %>
 </p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
+
+<h2>CHARTS </h2>
+<% @category.charts.each do |chart| %>
+  <p>
+    <strong>Blind range :</strong>
+    <%= chart.blindrange %>
+  </p>
+
+  <p>
+    <strong>Situation  :</strong>
+    <%= chart.situation %>
+  </p>
+ 
+   <p>
+    <strong>Opponent :</strong>
+    <%= chart.opponent %>
+  </p>
+ 
+<% end %>
+ 
+<h2>Add a chart:</h2>
+<%= form_with(model: [ @category, @category.charts.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :blindrange %><br>
+    <%= form.text_field :blindrange %>
+  </p>
+
+   <p>
+    <%= form.label :situation %><br>
+    <%= form.text_field :situation %>
+  </p>
+
+   <p>
+    <%= form.label :opponent %><br>
+    <%= form.text_field :opponent %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> 
 <%= link_to 'Back', categories_path %>

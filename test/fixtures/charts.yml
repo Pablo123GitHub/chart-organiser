@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blindrange: MyString
+  situation: MyString
+  opponent: MyString
+  category: one
+
+two:
+  blindrange: MyString
+  situation: MyString
+  opponent: MyString
+  category: two
