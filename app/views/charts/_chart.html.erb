@@ -1,0 +1,25 @@
+<p>
+    <strong>Blind Range:</strong>
+    <%= chart.blindrange%>
+</p>
+
+<p>
+    <strong>Situation :</strong>
+    <%= chart.situation%>
+</p>
+
+<p>
+    <strong>Opponent type:</strong>
+    <%= chart.opponent%>
+</p>
+
+
+<p>
+    <%= link_to 'Destroy Chart',
+    [chart.category, chart],
+                    method: :delete,
+                    data: { confirm: 'Dude, Are you sure about it?'}
+    
+    %>
+
+</p>
