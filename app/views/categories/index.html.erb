@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Categories</h1>
+<h2> Click on the relevant Category below </h2>
+
+<ul class="nav nav-pills nav-fill">
+    <% @categories.each do |category| %>
+      <% category_title = category.title%>
+      <li class="nav-item">
+        <%= link_to category_title, category, class: "nav-link btn btn-primary" %> 
+      </li>
+    <% end %>
+</ul>
+
 
 <table>
   <thead>

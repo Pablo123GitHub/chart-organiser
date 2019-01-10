@@ -4,13 +4,14 @@ class ChartsController < ApplicationController
         @chart = @category.charts.create(comment_params)
         redirect_to category_path(@category)
     end 
+    
 
     def destroy 
         @category = Category.find(params[:category_id])
         @chart = @category.charts.find(params[:id])
         @chart.destroy
         redirect_to category_path(@category)
-        end 
+    end 
 
     private 
     def comment_params

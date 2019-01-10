@@ -1,4 +1,20 @@
 <p id="notice"><%= notice %></p>
+<div class="justify-content-center">
+<%= link_to 'Back', categories_path, class: "btn btn-primary" %>
+</div>
+
+<h2> TEST</h2>
+<ul class="nav nav-pills nav-fill">
+    <% @categories.each do |category| %>
+      <% category_title = category.title%>
+      <li class="nav-item">
+        <%= link_to category_title, category, class: "nav-link btn btn-primary" %> 
+      </li>
+    <% end %>
+</ul>
+
+
+
 
 <p>
   <strong>Title:</strong>
@@ -12,7 +28,10 @@
 
 
 <h2>CHARTS </h2>
+
+<div class="d-flex justify-content-center">
 <% @category.charts.each do |chart| %>
+
   <p>
     <strong>Blind range :</strong>
     <%= chart.blindrange %>
@@ -27,16 +46,26 @@
     <strong>Opponent :</strong>
     <%= chart.opponent %>
   </p>
-
+  <div class="p-2 bd-highlight">
   <div style="width:400px; height:auto">
     <%= image_tag(chart.image, style: "width:100%")%>
   </div>
+  </div>
+
+
+
+  <%# <%= debug chart %> 
+
+  <%# <%= link_to 'Edit', edit_chart_path(chart) %>  
  
 <% end %>
- 
+</div>
+
+
+
 <h2>Add a chart:</h2>
 
 <%= render 'charts/form'%>
 
-<%= link_to 'Edit', edit_category_path(@category) %> 
-<%= link_to 'Back', categories_path %>
+
+
