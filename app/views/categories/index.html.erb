@@ -5,7 +5,7 @@
 <ul class="nav nav-pills nav-fill">
     <% @categories.each do |category| %>
       <% category_title = category.title%>
-      <li class="nav-item">
+      <li class="nav-item  d-flex justify-content-around">
         <%= link_to category_title, category, class: "nav-link btn btn-primary" %> 
       </li>
     <% end %>
