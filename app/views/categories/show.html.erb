@@ -14,8 +14,6 @@
 </ul>
 
 
-
-
 <p>
   <strong>Title:</strong>
   <%= @category.title %>
@@ -26,30 +24,23 @@
   <%= @category.description %>
 </p>
 
-
-<h2>CHARTS </h2>
-
-<div class="d-flex justify-content-center">
+<div style="display:flex">
 <% @category.charts.each do |chart| %>
 
-  <p>
-    <strong>Blind range :</strong>
+  
+  <div class="p-2 bd-highlight">
+  <strong>Blind range :</strong>
+   <p style="font-size: 40px">
     <%= chart.blindrange %>
   </p>
 
-  <p>
-    <strong>Situation  :</strong>
-    <%= chart.situation %>
-  </p>
- 
-   <p>
-    <strong>Opponent :</strong>
-    <%= chart.opponent %>
-  </p>
-  <div class="p-2 bd-highlight">
-  <div style="width:400px; height:auto">
+    <div style="width:400px; height:auto">
+    <% unless chart.nil? %> 
     <%= image_tag(chart.image, style: "width:100%")%>
+   <% end %>  
   </div>
+
+ 
   </div>
 
 
