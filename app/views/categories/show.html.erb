@@ -34,14 +34,21 @@
    <p style="font-size: 40px">
     <%= chart.blindrange %>
   </p>
-
-    <div style="width:400px; height:auto">
-    <% unless chart.nil? %> 
+  <% if chart.situation[0] == "3"%>
+   <div style="width:800px; height:auto">
     <%= image_tag(chart.image, style: "width:100%")%>
-   <% end %>  
+      <%= link_to 'Destroy', category_chart_path(@category, chart), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', edit_category_chart_path(@category, chart) %>
+      <%= link_to 'Show', edit_category_chart_path(@category, chart) %>
   </div>
-
- 
+  <% else %>
+   <div style="width:400px; height:auto">
+    <%= image_tag(chart.image, style: "width:100%")%>
+      <%= link_to 'Destroy', category_chart_path(@category, chart), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', edit_category_chart_path(@category, chart) %>
+      <%= link_to 'Show', edit_category_chart_path(@category, chart) %>
+  </div>
+  <% end %>
   </div>
 
 

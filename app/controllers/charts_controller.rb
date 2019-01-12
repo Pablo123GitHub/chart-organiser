@@ -13,6 +13,23 @@ class ChartsController < ApplicationController
         redirect_to category_path(@category)
     end 
 
+    def edit 
+        @category = Category.find(params[:category_id])
+        @chart = Chart.find(params[:id])
+    end 
+
+    def update
+        @category = Category.find(params[:category_id])
+        @chart = Chart.find(params[:id])
+        @chart.update_attributes(comment_params)
+        redirect_to category_path(@category)
+    end 
+
+    def show 
+        @category = Category.find(params[:category_id])
+        @chart = Chart.find(params[:id])
+    end 
+
     private 
     def comment_params
         params.require(:chart).permit(:blindrange, :situation, :opponent, :image )

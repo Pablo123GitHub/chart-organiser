@@ -1,0 +1,29 @@
+<%= form_with(model: [@category, @chart], local: true) do |form| %>
+    <p>
+        <%= form.label :blindrange %>
+        <%= form.text_field :blindrange %>
+    </p>
+
+    <p>
+        <%= form.label :situation %>
+        <%= form.text_field :situation %>
+    </p>
+
+    <p>
+        <%= form.label :opponent %>
+        <%= form.text_field :opponent %>
+    </p>
+
+    <div>
+        <%= form.label :image %>
+        <%= form.file_field :image %>
+    </div>
+
+
+    <p> 
+        <%= form.submit %>
+    </p>
+<% end %>
+
+
+
