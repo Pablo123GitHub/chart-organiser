@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<p id="notice" class="alert alert-danger"><%= notice %></p>
+<% end%>
 <div class="justify-content-center">
 <%= link_to 'Back', categories_path, class: "btn btn-primary" %>
 </div>
@@ -50,12 +52,6 @@
   </div>
   <% end %>
   </div>
-
-
-
-  <%# <%= debug chart %> 
-
-  <%# <%= link_to 'Edit', edit_chart_path(chart) %>  
  
 <% end %>
 </div>
